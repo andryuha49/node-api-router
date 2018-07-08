@@ -70,7 +70,7 @@ export class UsersController {
   }
 }
 ```
-Also available to us custom decorators
+Also available to use custom decorators
 ```js
 import {router, httpGet, httpPost, httpPut, httpDelete} from 'node-api-router';
 
