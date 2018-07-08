@@ -113,7 +113,7 @@ http://localhost:3001/api/v1/users/getAllUsers
 
 ## Examples
 
-Available ES6 example in this [folder](https://github.com/andryuha49/node-api-router/samples/sampla-es6)
+Available ES6 example in this [folder](https://github.com/andryuha49/node-api-router/tree/dev/samples/sample-es6)
 
 ## License
 

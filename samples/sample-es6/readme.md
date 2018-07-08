@@ -1,8 +1,8 @@
-#Simple example for using node-api-router
+# Simple example for using node-api-router
 
 Simple project for demonstrating usage node-api-router module
 
-##How to use
+## How to use
 
 ```bash
 $ npm install
@@ -37,7 +37,8 @@ PUT http://localhost:3001/api/v1/users/1 --data '{
 ```bash
 DELERE http://localhost:3001/api/v1/users/1
 ```
-All requests need basic authorization. Add header
+All requests need basic authorization. <br />
+Add header
 ```bash
 -H 'authorization:YWRtaW46cGFzcw=='
 ```
