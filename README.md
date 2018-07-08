@@ -111,7 +111,7 @@ You can use GET method by URL
 http://localhost:3001/api/v1/users/getAllUsers
 ```
 
-##Examples
+## Examples
 
 Available ES6 example in this [folder](https://github.com/andryuha49/node-api-router/samples/sampla-es6)
 
