@@ -1,11 +1,13 @@
 {
   "name": "node-api-router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Route decorators for node express api controllers",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm publish"
+    "clean:dist": "rm -rf dist",
+    "build": "npm run clean:dist && babel src --out-dir dist --presets=es2015",
+    "publish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -29,5 +31,9 @@
   "homepage": "https://github.com/andryuha49/node-api-router#readme",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   }
 }
