@@ -35,7 +35,7 @@ PUT http://localhost:3001/api/v1/users/1 --data '{
                                                  }'
 ```
 ```bash
-DELERE http://localhost:3001/api/v1/users/1
+DELETE http://localhost:3001/api/v1/users/1
 ```
 All requests need basic authorization. <br />
 Add header
