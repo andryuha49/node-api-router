@@ -1,6 +1,6 @@
 import {router, route} from 'node-api-router';
 import {UsersRepository} from '../repositories/usersRepository';
-import {basicAuthorizeMiddelware} from '../middelwares/basicAuthorizeMiddelware';
+import {basicAuthorizeMiddleware} from '../middlewares/basicAuthorizeMiddleware';
 
 const validateIdMiddleware = (req, res, next) => {
   const id = req.params.id;
@@ -15,7 +15,7 @@ const validateIdMiddleware = (req, res, next) => {
  * Basic authorization middleware - user:"admin", password:"pass"
  * For example add request header authorization:YWRtaW46cGFzcw==
  */
-@router('/users', basicAuthorizeMiddelware('admin', 'pass'))
+@router('/users', basicAuthorizeMiddleware('admin', 'pass'))
 export class UsersController {
   constructor() {
     this.usersRepository = new UsersRepository();

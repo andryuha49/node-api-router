@@ -1,4 +1,4 @@
-export function basicAuthorizeMiddelware(user, password) {
+export function basicAuthorizeMiddleware(user, password) {
   return (req, res, next) => {
 
     const header = req.headers['authorization'] || '',        // get the header
