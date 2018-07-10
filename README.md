@@ -80,7 +80,7 @@ export class UsersController {
   getAll(req, res) {
     return res.status(200).json([{id: 1, login:'user1'},{id: 2, login:'user2'}]);
   }
-  @httpGet('/:id', 'get')
+  @httpGet('/:id')
   getById(req, res) {
     return res.status(200).json({id: 1, login:'user1'});
   }
