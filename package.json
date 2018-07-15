@@ -1,6 +1,6 @@
 {
   "name": "node-api-router",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Route decorators for node express api controllers",
   "main": "dist/index.js",
   "scripts": {

@@ -21,16 +21,9 @@ export function createRouter(target, prefix = '', ...middleware) {
         middle.unshift(middleware[m - 1]);
       }
       const fn = routeFn.fn.bind(newTarget);
-      expressRouter[routeFn.method.toLowerCase()](routeFn.matcher, ...middle, fn);
-    }
-    let res = null;
-    if (prefix !== '') {
-      res = express.Router();
-      res.use(prefix, expressRouter);
-    } else {
-      res = expressRouter;
+      expressRouter[routeFn.method.toLowerCase()](prefix + routeFn.matcher, ...middle, fn);
     }
 
-    return res;
+    return expressRouter;
   };
 }

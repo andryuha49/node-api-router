@@ -6,26 +6,20 @@ Object.defineProperty(exports, "__esModule", {
 
 var _router = require('./decorators/router');
 
-Object.keys(_router).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _router[key];
-    }
-  });
+Object.defineProperty(exports, 'router', {
+  enumerable: true,
+  get: function get() {
+    return _router.router;
+  }
 });
 
 var _route = require('./decorators/route');
 
-Object.keys(_route).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _route[key];
-    }
-  });
+Object.defineProperty(exports, 'route', {
+  enumerable: true,
+  get: function get() {
+    return _route.route;
+  }
 });
 
 var _httpRoutes = require('./decorators/httpRoutes');
