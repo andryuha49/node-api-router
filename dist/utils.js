@@ -44,16 +44,9 @@ function createRouter(target) {
         middle.unshift(middleware[m - 1]);
       }
       var fn = routeFn.fn.bind(newTarget);
-      expressRouter[routeFn.method.toLowerCase()].apply(expressRouter, [routeFn.matcher].concat(_toConsumableArray(middle), [fn]));
-    }
-    var res = null;
-    if (prefix !== '') {
-      res = _express2.default.Router();
-      res.use(prefix, expressRouter);
-    } else {
-      res = expressRouter;
+      expressRouter[routeFn.method.toLowerCase()].apply(expressRouter, [prefix + routeFn.matcher].concat(_toConsumableArray(middle), [fn]));
     }
 
-    return res;
+    return expressRouter;
   };
 }
