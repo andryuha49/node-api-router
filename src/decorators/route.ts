@@ -1,6 +1,6 @@
-const defaultMethod = 'get';
+const defaultMethod: string = 'get';
 
-export function route(matcher, method = defaultMethod, ...middleware) {
+export function route(matcher: string, method: string | Function = defaultMethod, ...middleware) {
   return (target, key, descriptor) => {
     if (typeof matcher === 'undefined') {
       matcher = `/${key}`;

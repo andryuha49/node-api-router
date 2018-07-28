@@ -1,6 +1,10 @@
-import express from 'express';
+import * as express from 'express';
+import {Router} from 'express';
 
-export function createRouter(target, prefix = '', ...middleware) {
+export function createRouter(target: any, prefix:string = '', ...middleware): Router {
+  if (!target.name) {
+    console.log('T', target)
+  }
   return (...args) => {
     if (typeof prefix === 'function') {
       middleware.unshift(prefix);
