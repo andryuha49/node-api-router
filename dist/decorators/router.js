@@ -1,21 +1,15 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.router = router;
-
-var _utils = require('../utils');
-
-function router() {
-  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  if (typeof args[0] === 'function') {
-    return _utils.createRouter.apply(undefined, args);
-  }
-  return function (target) {
-    return _utils.createRouter.apply(undefined, [target].concat(args));
-  };
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../utils");
+function router(prefix, ...middleware) {
+    let localPrefix = '/';
+    if (typeof prefix === 'function') {
+        return utils_1.createRouter(prefix, localPrefix, ...middleware);
+    }
+    else {
+        localPrefix = prefix;
+    }
+    return (target) => utils_1.createRouter(target, localPrefix, ...middleware);
 }
+exports.router = router;
+//# sourceMappingURL=router.js.map

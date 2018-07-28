@@ -1,13 +1,15 @@
 {
   "name": "node-api-router",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Route decorators for node express api controllers",
   "main": "dist/index.js",
+  "typings": "dist/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean:dist": "rm -rf dist",
-    "build": "npm run clean:dist && babel src --out-dir dist --presets=es2015",
-    "publish": "npm run build && npm publish"
+    "build:babel": "npm run clean:dist && babel src --out-dir dist --presets=es2015",
+    "publish": "npm run build:ts && npm publish",
+    "build:ts": "npm run clean:dist && tsc"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "typescript": "^2.9.2"
   }
 }
