@@ -1,10 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const defaultMethod = 'get';
-function route(matcher, method = defaultMethod, ...middleware) {
-    return (target, key, descriptor) => {
+var defaultMethod = 'get';
+function route(matcher, method) {
+    if (method === void 0) { method = defaultMethod; }
+    var middleware = [];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        middleware[_i - 2] = arguments[_i];
+    }
+    return function (target, key, descriptor) {
         if (typeof matcher === 'undefined') {
-            matcher = `/${key}`;
+            matcher = "/" + key;
             method = defaultMethod;
         }
         if (typeof method === 'function') {
@@ -13,14 +18,14 @@ function route(matcher, method = defaultMethod, ...middleware) {
         }
         if (typeof matcher === 'function') {
             middleware.unshift(matcher);
-            matcher = `/${key}`;
+            matcher = "/" + key;
         }
         target.$routes = target.$routes || [];
         target.$routes.push({
             fn: descriptor.value,
-            matcher,
-            method,
-            middleware,
+            matcher: matcher,
+            method: method,
+            middleware: middleware,
         });
     };
 }
