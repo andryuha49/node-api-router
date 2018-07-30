@@ -54,7 +54,8 @@ export class UsersController {
   
   @route('/:id', 'get', methodMiddleware)
   getById(req, res) {
-    return res.status(200).json({id: 1, login:'user1'});
+    const id = req.params.id;
+    return res.status(200).json({id: id, login:'user ' + id});
   }
   @route('/:id', 'put')
   put(req, res) {
@@ -109,6 +110,32 @@ If set **route** decorator without any parameters you can use route by method na
 You can use GET method by URL
 ```bash
 http://localhost:3001/api/v1/users/getAllUsers
+```
+Request parameters in the **router**:
+```js
+import {router, route} from 'node-api-router';
+
+@router('/users/:userId/photos')
+export class UsersController {
+  /*
+   * Get all user photos
+   */
+  @route('/', 'get')
+  getAll(req, res) {
+    const userId = req.params.userId;
+    return res.status(200).json([{userId: userId, photoId: 1},{userId: userId, photoId: 2}]);
+  }
+  
+  /*
+   * Get user photo by photo id
+   */
+  @route('/:photoId', 'get')
+  getById(req, res) {
+    const userId = req.params.userId;
+    const photoId = req.params.photoId;
+    return res.status(200).json({userId: userId, photoId: photoId});
+  }
+}
 ```
 
 ## Examples
