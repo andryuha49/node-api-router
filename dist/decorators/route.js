@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var defaultMethod = 'get';
+var methods_1 = require("../enums/methods");
+var defaultMethod = methods_1.methods.get;
 function route(matcher, method) {
     if (method === void 0) { method = defaultMethod; }
     var middleware = [];

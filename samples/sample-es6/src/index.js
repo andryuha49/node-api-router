@@ -15,3 +15,5 @@ const port = process.env.PORT || 3001;
 server.listen(port, () => {
   console.log('[Express] Api is running on port', port);
 });
+
+export default server;

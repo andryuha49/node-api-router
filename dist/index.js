@@ -10,4 +10,5 @@ exports.httpGet = httpRoutes_1.httpGet;
 exports.httpPost = httpRoutes_1.httpPost;
 exports.httpPut = httpRoutes_1.httpPut;
 exports.httpDelete = httpRoutes_1.httpDelete;
+exports.httpPatch = httpRoutes_1.httpPatch;
 //# sourceMappingURL=index.js.map

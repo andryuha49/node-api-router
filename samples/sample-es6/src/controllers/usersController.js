@@ -55,6 +55,17 @@ export class UsersController {
     return res.status(200).json({message: 'ok'});
   }
 
+  @route('/:id', 'patch', validateIdMiddleware)
+  patch(req, res) {
+    const id = req.params.id;
+    const data = req.body;
+
+    const user = this.usersRepository.getById(id);
+
+    this.usersRepository.update(id, Object.assign(user, data));
+    return res.status(200).json({message: 'ok'});
+  }
+
   @route('/', 'post')
   post(req, res) {
     const data = req.body;

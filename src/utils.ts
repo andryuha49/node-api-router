@@ -1,11 +1,11 @@
 import * as express from 'express';
 import {Router} from 'express';
 
-export function createRouter(target: any, prefix:string = '', ...middleware): Router {
+export function createRouter(target: any, prefix: string = '', ...middleware): Function {
   if (!target.name) {
-    console.log('T', target)
+    throw Error('The router must be used for a class.');
   }
-  return (...args) => {
+  return (...args: any[]): Router => {
     if (typeof prefix === 'function') {
       middleware.unshift(prefix);
       prefix = '';
