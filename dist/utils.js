@@ -8,7 +8,7 @@ function createRouter(target, prefix) {
         middleware[_i - 2] = arguments[_i];
     }
     if (!target.name) {
-        console.log('T', target);
+        throw Error('The router must be used for a class.');
     }
     return function () {
         var args = [];

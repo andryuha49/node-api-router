@@ -1,6 +1,8 @@
-const defaultMethod: string = 'get';
+import {methods} from '../enums/methods';
 
-export function route(matcher: string, method: string | Function = defaultMethod, ...middleware) {
+const defaultMethod: methods = methods.get;
+
+export function route(matcher: string, method: methods | Function = defaultMethod, ...middleware) {
   return (target, key, descriptor) => {
     if (typeof matcher === 'undefined') {
       matcher = `/${key}`;

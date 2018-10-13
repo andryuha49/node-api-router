@@ -9,7 +9,7 @@ export function basicAuthorizeMiddleware(user, password) {
       userPassword = parts[1];
 
     if (userName !== user || userPassword !== password) {
-      return res.status(400).json({message: 'Unauthorized'});
+      return res.status(401).json({message: 'Unauthorized'});
     }
 
     return next();

@@ -1,1 +1,1 @@
-export declare function router(prefix: string | Function, ...middleware: any[]): any;
+export declare function router(prefix: string | Function, ...middleware: any[]): Function;

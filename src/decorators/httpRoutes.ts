@@ -1,23 +1,28 @@
 import {route} from './route';
+import {methods} from '../enums/methods';
 
 function httpOptions(matcher: string, ...middleware) {
-  return route(matcher, 'options', ...middleware);
+  return route(matcher, methods.options, ...middleware);
 }
 
 function httpGet(matcher: string, ...middleware) {
-  return route(matcher, 'get', ...middleware);
+  return route(matcher, methods.get, ...middleware);
 }
 
 function httpPost(matcher: string, ...middleware) {
-  return route(matcher, 'post', ...middleware);
+  return route(matcher, methods.post, ...middleware);
 }
 
 function httpPut(matcher: string, ...middleware) {
-  return route(matcher, 'put', ...middleware);
+  return route(matcher, methods.put, ...middleware);
+}
+
+function httpPatch(matcher: string, ...middleware) {
+  return route(matcher, methods.patch, ...middleware);
 }
 
 function httpDelete(matcher: string, ...middleware) {
-  return route(matcher, 'delete', ...middleware);
+  return route(matcher, methods.delete, ...middleware);
 }
 
-export {httpOptions,httpGet,httpPost,httpPut,httpDelete}
+export {httpOptions,httpGet,httpPost,httpPut,httpDelete,httpPatch}
